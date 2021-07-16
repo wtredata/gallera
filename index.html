@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./public/img/fondo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./src/normalize.css" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+
+    <title>Cronometro</title>
+  </head>
+  <body>
+    <div class="page">
+      <!-- Menu Bar -->
+      <div id="nav-container">
+        <div class="bg"></div>
+        <div class="button" tabindex="0">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </div>
+        <!-- Here options -->
+        <div id="nav-content" tabindex="0">
+          <div class="grid-menu">
+            <div class="watch-left">
+             
+            </div>
+            <div class="watch-center">
+              <label class="border">
+                <span class="clock-custom" >Reloj Principal <br /></span>+
+                <br>
+                <input id="intromin" class="min-input" type="number" min="0" max="59" placeholder="00" value="00">
+                <label  class="input-cock">:</label>
+                <input id="introseg" class="min-input" type="number" min="0" max="59" placeholder="00" value="00">
+              </label>
+              <label class="clock-custom">mm/ss</label>
+            </div>
+            <div class="watch-right">
+            
+            </div>
+          
+            <div class="config-title"><h1>Gallera La Locura</h1></div>
+
+          </div>
+          <div style="text-align: right">
+            <br>
+            <button class="btn-acep" type="button" onclick="validar()"><i class="fas fa-flag-checkered center-icon"></i></button>
+            <button class="btn-full" type="button" onclick="launchFullScreen(document.documentElement);"><i class="fas fa-expand center-icon"></i></button>
+        </div>
+        </div>
+
+        
+      </div>
+      <!-- heree  -->
+
+
+      <div class="grid-options">
+        <div class="main-watch">
+          <div style="text-align: center">
+          
+            <div>
+              <span id="min" class="number-main">00</span>
+              <span class="number-main">:</span>
+              <span id="seg" class="number-main">00</span>
+              
+            </div>
+            <br>
+          </div>
+          <div style="text-align: center">
+            <audio id="audio" controls>
+              <source  src="./public/audio.mp3">
+              </audio>
+                <button id="star" class="play-btn" onclick="mainClock()"><i class="fas fa-play center-icon"></i></button>
+              </div>
+        </div>
+        <div class="left-watch">
+          <div style="text-align: center">
+            <span id="botellaA" class="number-left">60<br /></span>
+          </div>
+
+          <div style="text-align: center">
+            <button id="btnAA" class="play-btn" onclick="botellaA()">
+              <i class="fas fa-play center-icon"></i>
+            </button>
+            <button id="resA" class="reset-btn" onclick="restartA()"><i class="fas fa-redo-alt center-icon"></i></button>
+          </div>
+        </div>
+        <div class="right-watch">
+          <div style="text-align: center">
+            <span id="botellaB" class="number-right">60<br /></span>
+          </div>
+
+          <div style="text-align: center">
+            <button id="btnBB" class="play-btn" onclick="botellaB()">
+              <i class="fas fa-play center-icon"> </i>
+            </button>
+            <button id="resB" class="reset-btn" onclick="restartB()"><i class="fas fa-redo-alt center-icon"></i></i></button>
+          </div>
+        </div>
+        <div class="number-fight">
+          <br />
+          <label class="custom"> Pelea N° </label>
+          <input
+            id="peleainput"
+            class="input-pelea"
+            type="number"
+            min="1"
+            pattern="^[0-9]+"
+            value="00"
+          />
+          <br />
+        </div>
+        <div class="apuesta">
+          <br />
+          <label class="custom">Apuesta $ </label>
+          <input
+            class="input-apuesta"
+            type="number"
+            min="1"
+            pattern="^[0-9]+"
+            value="20000"
+          />
+          <br />
+        </div>
+        <div class="cock-up">
+          <input
+            id="cock-1"
+            class="input-cock"
+            style="align-items: center"
+            type="text"
+            value="Gallos finos"
+          />
+        </div>
+        <div class="cock-down">
+          <input
+          id="cock-2"
+            class="input-cock"
+            style="align-items: center"
+            type="text"
+            value="Gallos feos"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./src/app.js"></script>
+</html>
